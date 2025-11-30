@@ -1,33 +1,21 @@
 {
   "compilerOptions": {
-    "rootDir": ".",
-    "target": "ESNext",
-    "useDefineForClassFields": true,
+    "target": "ES2017",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": true,
     "skipLibCheck": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
-    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "esModuleInterop": true,
     "module": "ESNext",
-    "moduleResolution": "Node",
+    "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx",
-    "noImplicitAny": false,
-    "paths": {
-      "gatsby": ["./src/compat/gatsby-compat.tsx"],
-      "@reach/router": ["./src/compat/reach-router-compat.tsx"]
-    }
+    "jsx": "preserve",
+    "incremental": true,
+    "types": ["@types/node"],
+    "baseUrl": "."
   },
-  "include": ["src"],
-  "references": [{ "path": "./tsconfig.node.json" }],
-  // ts-node overrides for Storybook.
-  "ts-node": {
-    "compilerOptions": {
-      "module": "commonjs"
-    }
-  }
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "legacy/**"]
 }
